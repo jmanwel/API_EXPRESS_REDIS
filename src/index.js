@@ -2,14 +2,14 @@ const express = require('express');
 const axios = require('axios');
 const responseTime = require('response-time');
 const redis = require('redis');
+const dotenv = require('dotenv');
 
-const client = redis.createClient({
-	host: '127.0.0.1',
-	port: 6379
-});
+dotenv.config();
+
+const client = redis.createClient({ url: `redis://${ process.env.REDIS_HOST }:${ process.env.REDIS_PORT }` });
 
 const URL_BASE = "https://rickandmortyapi.com/api/character";
-const PORT = 3000;
+const PORT = process.env.PORT;
 const app = express();
 app.use(responseTime());
 
