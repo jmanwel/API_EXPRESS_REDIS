@@ -3,15 +3,18 @@ pipeline{
     stages {
         stage("build"){
             steps {
-                // sh 'npm install'
-                // sh 'npm build'
                 echo "Building..."
+                sh 'npm install'
+                sh 'npm build'
             }
         }
 
         stage("test"){
             steps {
                 echo "Testing..."
+                nodejs('NodeJS_25') {
+                    sh 'npm run test'
+                }
             }
         }
 
