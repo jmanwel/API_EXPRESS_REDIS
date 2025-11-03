@@ -1,7 +1,7 @@
 FROM node:latest
 WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm install express redis response-time axios dotenv
+RUN npm install express redis response-time axios dotenv mongoose
 COPY . .
 EXPOSE 3000
 
