@@ -1,22 +1,21 @@
 pipeline{
     agent any
+    tools {
+            nodejs 'NodeJS 20.19.5' // Use the name configured in Global Tool Configuration
+        }
     stages {
         stage("build"){
             steps {
                 echo "Building..."
-                nodejs('NodeJS 20.19.5') {
-                    sh 'npm install'
-                    sh 'npm build'
-                }
+                sh 'npm install'
+                sh 'npm build'
             }
         }
 
         stage("test"){
             steps {
                 echo "Testing..."
-                nodejs('NodeJS 20.19.5') {
-                    sh 'npm run test'
-                }
+                sh 'npm run test'
             }
         }
 
