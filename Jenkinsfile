@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-            nodejs 'NodeJS 20.19.5' // Use the name configured in Global Tool Configuration
+            nodejs 'jenkins_node' // Use the name configured in Global Tool Configuration
         }
     stages {
         stage("build"){
