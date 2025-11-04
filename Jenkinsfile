@@ -12,7 +12,7 @@ pipeline{
         stage("test"){
             steps {
                 echo "Testing..."
-                nodejs('NodeJS_25') {
+                nodejs('NodeJS 25.1.0') {
                     sh 'npm run test'
                 }
             }
