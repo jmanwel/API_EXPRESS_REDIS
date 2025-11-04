@@ -4,7 +4,7 @@ pipeline{
         stage("build"){
             steps {
                 echo "Building..."
-                nodejs('NodeJS 25.1.0') {
+                nodejs('NodeJS 20.19.5') {
                     sh 'npm install'
                     sh 'npm build'
                 }
@@ -14,7 +14,7 @@ pipeline{
         stage("test"){
             steps {
                 echo "Testing..."
-                nodejs('NodeJS 25.1.0') {
+                nodejs('NodeJS 20.19.5') {
                     sh 'npm run test'
                 }
             }
